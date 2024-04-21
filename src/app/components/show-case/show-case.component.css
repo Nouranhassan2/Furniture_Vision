@@ -1,0 +1,146 @@
+/* navbar section */
+/* general styles */
+.w-90{
+    width: 85%;
+}
+.w-20{
+    width: 20%;
+}
+.w-10{
+width: 10%;
+}
+/* navbar section */
+.navbar-nav {
+    --bs-navbar-color:#112f49;
+    --bs-navbar-hover-color:#112f49;
+    --bs-nav-link-padding-x: 0;
+    --bs-nav-link-padding-y: 0rem;
+    --bs-nav-link-font-weight: ;
+    --bs-nav-link-color: var(--bs-navbar-color);
+    --bs-nav-link-hover-color: var(--bs-navbar-hover-color);
+    --bs-nav-link-disabled-color: var(--bs-navbar-disabled-color);
+
+  }
+  .LogoImg{
+    width: 300px;
+}
+
+/* hero section */
+.hero{
+    /* @ngular-font-face-exclude*/
+    background-image: url('/assets/Hero-image-plain.webp');
+    background-size: 100% 100%; 
+    background-position: center; 
+    background-repeat: no-repeat; 
+    object-fit: cover;
+    object-position: cover;
+    min-height: 110vh; 
+    width: 100%;      
+    overflow: hidden;
+}
+
+.body{
+    display: flex;
+    flex-direction: column;
+    transform: translate(35rem, 16rem);
+}
+
+.body h2 , h3{
+ color: #292929;
+
+}
+.body span{
+    color: #002336;
+
+}
+h2{
+    font-size: 60px;
+    font-weight: 700;
+}
+h3{
+    font-size: 40px;
+    font-weight: bold;
+}
+
+.btn-main{
+    color: #fff;
+  background-color: #001f34;
+  padding: 20px 40px;
+ margin-top: 15px;
+ width: fit-content;
+ font-size: 30px;
+ font-weight: 600;
+ border-radius: 27px;
+ 
+ }
+
+
+ /* media query */
+ @media (min-width:990px)and(max-width:1260px) {
+    .nav-link {
+        color: beige;
+        font-size: 18px;
+    }
+ }
+ .nav-link {
+    display: block;
+    padding: var(--bs-nav-link-padding-y) var(--bs-nav-link-padding-x);
+    font-size: 18px;
+ }
+
+ /* features section */
+ .w-90{
+    width: 90%;
+}
+.w-70{
+    width: 70%;
+}
+@media (max-width:991px) {
+  .header{
+    width: fit-content;
+    text-align: center;
+    margin-inline: auto;
+ }
+ .body-text{
+    width: fit-content;
+    text-align: center;
+    margin-inline: auto;
+    text-align: center;
+   }
+}
+@media (min-width:1500px) {
+  .column{
+    padding-left: 6.2rem;
+  }
+}
+/* Home section */
+.home{
+    overflow: hidden;
+}
+img{
+    width: 100%;
+}
+
+.home .text{
+    position: absolute;
+    width: 100%;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    height: 100%;
+    z-index: 3;
+    background-color: rgba(0, 0, 0, 0.6);
+    opacity: 0;
+    transition: 0.5s;
+
+}
+.home .text:hover{
+opacity: 1;
+}
+.home .text:hover p{
+    opacity: 1;
+    }
+.px-6{
+    padding-inline: 7rem;
+}

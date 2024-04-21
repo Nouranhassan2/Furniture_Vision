@@ -1,0 +1,79 @@
+<app-navbar></app-navbar>
+<!-- cc -->
+<section class="checkout-form">
+    <h1 class="mb-3 mt-5 h-1 text-center">Check out your order</h1>
+    <div class="container mt-5" ng-controller="CheckoutController as ctrl">
+        <h2 class="mt-4 h-2">Fill your information</h2>
+        <h4 class="h-4 mb-4">We will receive an E-mail with your order</h4>
+        <div class="row">
+            <div class="col-md-6 order-md-1">
+                <form class="needs-validation" (ngSubmit)="onSubmit()" #checkoutForm="ngForm">
+                    <div class="mb-3">
+                        <label for="name" class="fw-bold input-font mb-1">Name</label>
+                        <input type="text" class="form-control border-2" id="name" [(ngModel)]="order.name" placeholder="Name" value="" name="name"
+                            required >
+                    </div>
+                    <div class="mb-3">
+                        <label for="email" class="fw-bold input-font mb-1">Email</label>
+                        <input type="email" class="form-control border-2" id="email" [(ngModel)]="order.email" placeholder="Email" required name="email"
+                           >
+                    </div>
+                    <div class="mb-3">
+                        <label for="phone" class="fw-bold input-font mb-1">Phone Number</label>
+                        <input type="tel" class="form-control border-2"  [(ngModel)]="order.phone" id="phone" placeholder="Phone Number" name="phone"
+                            required >
+                    </div>
+                    <div class="mb-3">
+                        <label for="itemsCode" class="fw-bold input-font mb-1">Items code</label>
+                        <input type="text" class="form-control border-2" id="itemsCode" [(ngModel)]="order.itemsCode" placeholder="Items Code" name="itemsCode"
+                            required >
+                    </div>
+                    <div class="row justify-content-center mt-5">
+                        <div class="col-auto">
+                            <button class="text-white btn-lg rounded-4 text-center btn-submit" [disabled]="!checkoutForm.form.valid" type="submit">Send the
+                                order</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+  
+    </div>
+</section>  
+<!-- xx -->
+<!-- <section class="checkout my-5">
+     <div class="container-fluid w-90">
+        <h2 class="text-center fw-bold fs-1">Checkout your order</h2>
+       <div class="row my-5">
+        <div class="col-md-8 mt-2">
+        <h5 class="fs-3 my-0">Fill your information</h5>
+        <p class="text-muted">You will receive an E-mail with your order</p>
+        <form (ngSubmit)="onSubmit()" class="mt-4" #checkoutForm="ngForm">
+            <div>
+              <label for="name">Name:</label>
+              <input type="text" id="name" [(ngModel)]="order.name" name="name" required>
+            </div>
+            <div>
+              <label for="email">Email:</label>
+              <input type="email" id="email" [(ngModel)]="order.email" name="email" required>
+            </div>
+            <div>
+              <label for="phone">Phone Number:</label>
+              <input type="tel" id="phone" [(ngModel)]="order.phone" name="phone" required>
+            </div>
+            <div>
+              <label for="itemsCode">Items Code:</label>
+              <input type="text" id="itemsCode" [(ngModel)]="order.itemsCode" name="itemsCode" required>
+            </div>
+            <button type="submit" class=" fs-5 mt-4 " >Send the order</button>
+          </form>
+        </div>
+        <div class="col-md-4">
+        <h2>cart</h2>
+       </div>
+    </div>
+  </div>
+  
+</section> -->
+<app-footer></app-footer>
+  
