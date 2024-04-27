@@ -39,3 +39,13 @@
     font-size: 21px;
     padding-block: 5px 25px;
 }
+.btn-main {
+    color: #fff;
+    background-color: #001f34;
+    padding: 12px 25px;
+    margin-top: 15px;
+    width: -moz-fit-content;
+    width: fit-content;
+    font-size: 18px;
+    border-radius: 27px;
+}

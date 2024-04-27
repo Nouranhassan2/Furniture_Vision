@@ -1,0 +1,37 @@
+/* hero section */
+.home{
+    overflow: hidden;
+}
+img{
+    width: 100%;
+}
+
+.home .text{
+    position: absolute;
+    width: 100%;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    height: 100%;
+    z-index: 3;
+    background-color: rgba(0, 0, 0, 0.6);
+    opacity: 0;
+    transition: 0.5s;
+
+}
+.home .text:hover{
+opacity: 1;
+}
+.home .text:hover p{
+    opacity: 1;
+    }
+.px-6{
+    padding-inline: 7rem;
+}
+@media (max-width:716px) {
+    .special-img{
+        height: 200px;
+    }
+    
+}

@@ -1,51 +1,16 @@
-<!-- <section class="products mt-5 ">
-    <div class="container w-80">
-         <div class="special-heading text-center">
-            <h2 class="my-5">Our Products</h2>
-         </div>
 
-        <div class="buttuns text-center">
-            <button class="btn btn-main" (click)="selectCategory('Executive Office')">Executive Office</button>
-            <button class="btn btn-main" (click)="selectCategory('Manager Office')">Manager Office</button>
-            <button class="btn btn-main" (click)="selectCategory('Employees Office')">Employees Office</button>
-            <button class="btn btn-main" (click)="selectCategory('Workstation')">Workstation</button>
-            <button class="btn btn-main" (click)="selectCategory('Cabinet')">Cabinet</button>
-            <button class="btn btn-main" (click)="selectCategory('Mesh Chair')">Mesh Chair</button>
-            <button class="btn btn-main" (click)="selectCategory('Leather Chairs')">Leather Chairs</button>
-            <button class="btn btn-main" (click)="selectCategory('Reception')">Reception</button>
-            <button class="btn btn-main" (click)="selectCategory('Sofa')">Sofa</button>
-
-            <button class="btn btn-main" (click)="selectCategory('Meeting Table')">Control Table</button>
-
-          </div>
-          <div *ngIf="!filterApplied">
-          <div *ngFor="let product of products , let i = index" class="my-5 " >
-            <h3 *ngIf="i === 0">{{ product.filter }} </h3>
-          </div>
-        </div>
-          <div class="row gy-4" *ngIf="filterApplied">
-            <div class="col-lg-3" *ngFor="let product of filteredProducts">
-              <div class="inner">
-                <img [src]="product.imageLink" alt="{{ product.productName }}" class="w-100 rounded-3 h-200">
-              </div>
-            </div>
-          </div>
-
-          <select class="btn btn-second" id="filterBy" #filterSelect (change)="applyFilter(filterSelect.value)">
-            <option [hidden]="filterApplied" value="" disabled selected>Filter by:</option>
-            <option value="By Order">By Order</option>
-            <option value="Made in Saudi">Made in Saudi</option>
-          </select>
-          <div class="row gy-4" >
-            <div class="col-lg-3" *ngFor="let product of products">
-              <div class="inner " >
-                <img [src]="product.imageLink" alt="" class="w-100 rounded-3 h-200">
-              </div>
-            </div>
-          </div>
-    </div>
-</section> -->
 <section class="products mt-5">
+<!--  -->
+<!-- <div class="row">
+<div *ngFor="let product of products" class="col-lg-3">
+  <div class="card">
+    <img [src]="product.imageLink" alt="{{ product.productName }}" class="card-img-top">
+  </div>
+</div>
+</div> -->
+<app-modal [isVisible]="modalVisible" [selectedProduct]="selectedProduct" *ngIf="modalVisible" (closeEvent)="handleModalClose()"></app-modal>
+
+<!--  -->
   <div class="container w-80">
     <div class="special-heading text-center">
       <h2 class="my-5">Our Products</h2>
@@ -72,7 +37,8 @@
       <!-- Conditional rendering based on whether filters are applied -->
       <div *ngIf="filteredProducts.length > 0; else showAll" class="row gy-4 mt-4">
         <div *ngFor="let product of filteredProducts" class="col-lg-3">
-          <div class="card">
+          <div class="card "  (click)="showProductModal(product)" 
+          >
             <img [src]="product.imageLink" alt="{{ product.productName }}" class="card-img-top w-100 rounded-3 h-200 object-fit-cover overflow-hidden">
     
           </div>
@@ -82,8 +48,9 @@
         <div class="row gy-4 mt-4">
 
         <div *ngFor="let product of products" class="col-lg-3">
-          <div class="card">
-            <img [src]="product.imageLink" alt="{{ product.productName }}" class="card-img-top w-100 rounded-3 h-200 object-fit-cover overflow-hidden">
+          <div class="card "  (click)="showProductModal(product)"  
+          >
+            <img [src]="product.imageLink" alt="{{ product.productName }}" class="card-img-top w-100 rounded-3 h-200 object-fit-cover">
        
           </div>
         </div>

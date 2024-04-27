@@ -3,6 +3,9 @@ import { Observable } from 'rxjs';
 import { ApiResponse } from 'src/app/api-response';
 import { Product } from 'src/app/product';
 import { ProductsSService } from 'src/app/products-s.service';
+import { NgZone } from '@angular/core';
+
+declare var bootstrap: any;
 
 @Component({
   selector: 'app-products',
@@ -11,53 +14,19 @@ import { ProductsSService } from 'src/app/products-s.service';
 })
 export class ProductsComponent {
 
-// products : Product[] =[];
-// selectedCategory=''
-// filteredProducts: Product[]=[];
-// filterApplied = false;
-// selectedCat=false;
-
-//   constructor(private productService: ProductsSService) {}
-
-//   selectCategory(category: string): void {
-//   this.selectedCat=true
-//     this.productService.getProductsByCategory(category).subscribe(data => {
-//       this.products = data.products;
-//       console.log(data.products);
-      
-//     }, error => {
-//       console.error('Error fetching data: ', error);
-//     });
-//   }
-
-   
-//     applyFilter(filter: string): void {
-//       this.filterApplied = true;
-//       if (this.selectedCategory && filter) {
-//         this.productService.getFilteredProducts(this.selectedCategory, filter).subscribe(
-//         data => {
-//           this.filteredProducts = data;
-//           console.log(data);
-//         },    
-//         error => {
-//           console.error('Error fetching filtered data: ', error);
-//         }
-//       );
-//     } else {
-//       this.filteredProducts = this.products; 
-//     }
-//   }
-// }
-
 products: Product[] = [];
 filteredProducts: any[] = [];
 selectedCategory: string = '';
 filterVisible = false;  // Controls the visibility of the filter select
+selectedProduct?: Product;
+ modalVisible = false;
+
 
 constructor(private productService: ProductsSService) {}
 
 
 selectCategory(category: string): void {
+
   this.selectedCategory = category;
   this.filterVisible = true;
   this.productService.getProductsByCategory(category).subscribe({
@@ -80,5 +49,13 @@ applyFilter(filter: string): void {
       error: (error) => console.error('Error fetching filtered data: ', error)
     });
   }
+}
+showProductModal(product: Product): void {
+  this.selectedProduct = product;
+  this.modalVisible = true;
+}
+handleModalClose(): void {
+  this.modalVisible = false;  // Reset the modal visibility
+  this.selectedProduct = undefined;  // Optional: Clear the selected product
 }
 }

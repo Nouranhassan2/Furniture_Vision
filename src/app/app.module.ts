@@ -12,6 +12,9 @@ import { FooterComponent } from './components/footer/footer.component';
 import { ProductsComponent } from './components/products/products.component';
 import { AboutUsComponent } from './components/about-us/about-us.component';
 import { ContactUsComponent } from './components/contact-us/contact-us.component';
+import { FeaturesComponent } from './components/features/features.component';
+import { HeroComponent } from './components/hero/hero.component';
+import { ModalComponent } from './components/modal/modal.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +25,10 @@ import { ContactUsComponent } from './components/contact-us/contact-us.component
     FooterComponent,
     ProductsComponent,
     AboutUsComponent,
-    ContactUsComponent
+    ContactUsComponent,
+    FeaturesComponent,
+    HeroComponent,
+    ModalComponent
   ],
   imports: [
     BrowserModule,
