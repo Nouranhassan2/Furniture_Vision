@@ -1,0 +1,17 @@
+.w-25{
+    width: 25%;
+}
+.cart{
+
+    position: relative;
+    margin-left: 25px;
+}
+/* .cart::before{
+   content: '';
+    position: absolute;
+    width:2px;
+    height: 150%;
+    top: 0;
+    left: 0;
+    background-color: #000;
+} */

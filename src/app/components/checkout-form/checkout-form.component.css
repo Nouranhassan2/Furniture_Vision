@@ -70,4 +70,7 @@
     font-family: "Rubik", sans-serif;
   }
   
- 
+ .row-r{
+  display: flex;
+  flex-direction: row-reverse;
+ }

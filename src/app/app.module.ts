@@ -15,6 +15,7 @@ import { ContactUsComponent } from './components/contact-us/contact-us.component
 import { FeaturesComponent } from './components/features/features.component';
 import { HeroComponent } from './components/hero/hero.component';
 import { ModalComponent } from './components/modal/modal.component';
+import { CartComponent } from './components/cart/cart.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { ModalComponent } from './components/modal/modal.component';
     ContactUsComponent,
     FeaturesComponent,
     HeroComponent,
-    ModalComponent
+    ModalComponent,
+    CartComponent
   ],
   imports: [
     BrowserModule,
