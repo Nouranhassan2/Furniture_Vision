@@ -31,3 +31,7 @@
         margin: 10px 11px;
         padding: 8px 24px;
           }
+
+          img{
+            cursor: pointer;
+          }

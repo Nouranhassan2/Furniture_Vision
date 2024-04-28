@@ -20,10 +20,11 @@
   </div>
   <div class="col-4">
     <p> {{ item.productName }}</p>
+    <p>Product Item:{{item.productID}}</p>
 
   </div>
   <div class="col-4">
-    <i class="fa-solid fa-trash fs-5" (click)="removeFromCart(item)"></i>
+    <i class="fa-solid fa-trash fs-5 icon" (click)="removeFromCart(item)"></i>
 
   </div>
     </div>

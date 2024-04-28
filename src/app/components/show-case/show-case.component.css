@@ -9,71 +9,163 @@
 .w-10{
 width: 10%;
 }
-/* navbar section */
-.navbar-nav {
-    --bs-navbar-color:#112f49;
-    --bs-navbar-hover-color:#112f49;
-    --bs-nav-link-padding-x: 0;
-    --bs-nav-link-padding-y: 0rem;
-    --bs-nav-link-font-weight: ;
-    --bs-nav-link-color: var(--bs-navbar-color);
-    --bs-nav-link-hover-color: var(--bs-navbar-hover-color);
-    --bs-nav-link-disabled-color: var(--bs-navbar-disabled-color);
 
-  }
-  .LogoImg{
-    width: 300px;
+
+/* navbar section */
+.nav-bar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
 }
+
+.navbar-nav {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+  padding-right: 1rem;
+  --bs-navbar-color: #112f49;
+  --bs-navbar-hover-color: #112f49;
+  --bs-nav-link-padding-x: 0;
+  --bs-nav-link-padding-y: 0rem;
+  --bs-nav-link-font-weight: normal;
+  /* Ensure this property has a valid value */
+  --bs-nav-link-color: var(--bs-navbar-color);
+  --bs-nav-link-hover-color: var(--bs-navbar-hover-color);
+  --bs-nav-link-disabled-color: var(--bs-navbar-disabled-color);
+  /* padding-left: 60px; */
+  /* Adjust this value as needed to move items to the right */
+}
+
+.LogoImg{
+  width: 300px;
+}
+
+@media (max-width: 768px) {
+  .LogoImg {
+    width: 230px;
+    margin-left: 0.5rem;
+  }
+
+}
+
+
 
 /* hero section */
-.hero{
-    /* @ngular-font-face-exclude*/
+ /* @ngular-font-face-exclude*/
+/* .hero{
     background-image: url('/assets/Hero-image-plain.webp');
-    background-size: 100% 100%; 
-    background-position: center; 
-    background-repeat: no-repeat; 
+    background-size: 100% 100%;
+    background-position: center;
+    background-repeat: no-repeat;
     object-fit: cover;
     object-position: cover;
-    min-height: 110vh; 
-    width: 100%;      
+    min-height: 110vh;
+    width: 100%;
     overflow: hidden;
-}
+} */
+
+
 
 .body{
     display: flex;
     flex-direction: column;
-    transform: translate(35rem, 16rem);
+    transform: translate(22rem, 13rem);
 }
 
-.body h2 , h3{
- color: #292929;
-
+/* Remove the transformation for smaller screens */
+@media (max-width: 991px) {
+  .body {
+    transform: none;
+    padding: 14rem 0;
+    align-items: center;
+  }
+  .navbar-nav{
+    background-color:rgba(236, 227, 227, 0.9);
+    border-radius: 10px;
+    margin: 8px 15px;
+    width: 90%;
+    z-index: 99;
+  }
+  .h1{
+    font-size: 34px;
+  }
 }
-.body span{
+
+.body h2 , h3, .dark-grey{
+  color: #292929;
+}
+
+/* .body span{
     color: #002336;
+} */
 
-}
+
 h2{
-    font-size: 60px;
+    font-size: 48px;
     font-weight: 700;
 }
+
+.dark-blue {
+  color: #002336;
+}
+
+.body h2,
+h3,
+.dark-grey {
+  color: #292929;
+}
+
+.btn-main {
+  font-family: "Roboto", sans-serif;
+  color: #fff;
+  background-color: #001f34;
+  padding: 18px 35px;
+  margin-top: 15px;
+  width: fit-content;
+  font-size: 20px;
+  font-weight: 600;
+  border-radius: 22px;
+  border: none;
+}
+
+.hero {
+  background-image: url('/assets/Hero-image-plain.webp');
+  background-size: 100% 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  object-fit: cover;
+  object-position: cover;
+  min-height: 110vh;
+  width: 100%;
+  overflow: hidden;
+}
+
+/* For screens less than or equal to 991px */
+/* @media (max-width: 991px) {
+  .hero {
+    background-image: url('src\assets\images\Hero991.webp');
+
+  }
+} */
+
+/* For screens less than or equal to 478px */
+/* @media (max-width: 478px) {
+  .hero {
+    background-image: url('src\assets\images\Hero478.webp');
+  }
+} */
+
+.nav-item{
+  padding-right: 5px;
+  padding-left: 5px;
+}
+
+
 h3{
     font-size: 40px;
     font-weight: bold;
 }
-
-.btn-main{
-    color: #fff;
-  background-color: #001f34;
-  padding: 20px 40px;
- margin-top: 15px;
- width: fit-content;
- font-size: 30px;
- font-weight: 600;
- border-radius: 27px;
- 
- }
-
 
  /* media query */
  @media (min-width:990px)and(max-width:1260px) {
@@ -87,7 +179,13 @@ h3{
     padding: var(--bs-nav-link-padding-y) var(--bs-nav-link-padding-x);
     font-size: 18px;
  }
-
+ @media (max-width:992px) {
+    .nav-link {
+        display: block;
+        padding: 4px 10px;
+        font-size: 18px
+    }
+ }
 
 /* Home section */
 .home{

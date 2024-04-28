@@ -1,20 +1,31 @@
-
 /* contact section */
+.label{
+  font-family: 'Roboto', sans-serif;
+}
+
+input::placeholder {
+  font-weight: bold;
+}
+
+textarea::placeholder {
+  font-weight: bold;
+}
+
 .contact-section {
     width: 85%;
     margin: 2rem auto;
     padding: 2rem;
   }
-  
+
   .contact-section h2 {
     font-weight: 600;
     margin-bottom: 1.5rem;
   }
-  
+
   .contact-info {
     margin-bottom: 1rem;
   }
-  
+
   .contact-info h3 {
     font-size: 1.25rem;
     font-weight: 600;
@@ -47,5 +58,5 @@
     width: -moz-fit-content;
     width: fit-content;
     font-size: 18px;
-    border-radius: 27px;
+    border-radius: 25px;
 }
