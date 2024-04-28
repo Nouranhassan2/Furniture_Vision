@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 
@@ -7,16 +8,23 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./contact-us.component.css']
 })
 export class ContactUsComponent {
+  order: any = {};
+
   contactForm = new FormGroup({
     name: new FormControl('', [Validators.required]),
     email: new FormControl('', [Validators.required, Validators.email]),
     message: new FormControl('', [Validators.required])
   });
+  constructor(private http: HttpClient) {}
 
-  onSubmit() {
+  onSubmit(): void {
     if (this.contactForm.valid) {
-      console.log('Form Value', this.contactForm.value);
-      // Here you can add the logic to send the form data to a server or email service.
+      this.http.post('http://127.0.0.1:5000/contact_us', this.contactForm.value).subscribe(
+        response => alert('Message sent successfully'),
+        error => alert('Error occurred while sending message')
+      );
+    } else {
+      alert('Please fill out the form correctly.');
     }
   }
 }
