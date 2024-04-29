@@ -130,31 +130,32 @@ h3,
 }
 
 .hero {
-  background-image: url('/assets/Hero-image-plain.webp');
+  background-image: url('/assets/hero1440.webp');
   background-size: 100% 100%;
   background-position: center;
   background-repeat: no-repeat;
   object-fit: cover;
   object-position: cover;
-  min-height: 110vh;
+  height: 110vh;
   width: 100%;
   overflow: hidden;
 }
 
 /* For screens less than or equal to 991px */
-/* @media (max-width: 991px) {
+@media (max-width: 991px) {
   .hero {
-    background-image: url('src\assets\images\Hero991.webp');
+    background-image: url('/assets/hero991.webp');
 
   }
-} */
+}
 
 /* For screens less than or equal to 478px */
-/* @media (max-width: 478px) {
+@media (max-width: 478px) {
   .hero {
-    background-image: url('src\assets\images\Hero478.webp');
+    background-image: url('/assets/hero441.webp');
+    height: 90vh;
   }
-} */
+}
 
 .nav-item{
   padding-right: 5px;
